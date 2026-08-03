@@ -16,7 +16,7 @@ vocab_Size = 65
 #training
 learning_rate = 1e-3
 max_iters = 5000
-eval_interval = 500
+eval_intervals = 500
 
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
