@@ -1,6 +1,5 @@
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
 
 from config import (
     vocab_size,
@@ -31,11 +30,11 @@ class GPT(nn.Module):
 
         self.lm_head = nn.Linear(n_embd, vocab_size)
 
-    def forward(self, idx, targets=None):
+    def forward(self, idx):
         B,S = idx.shape
 
         token_embeddings = self.token_embedding_table(idx)
-        positional_embeddings = self.positional_embedding_table(torch.arange(S,device=device))
+        positional_embeddings = self.positional_embedding_table(torch.arange(S,device=idx.device))
 
         x = token_embeddings + positional_embeddings
 

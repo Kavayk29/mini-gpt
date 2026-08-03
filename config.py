@@ -11,6 +11,7 @@ train_split = 0.9
 n_embd = 128
 n_head = 4
 n_layer = 4
+vocab_Size = 65
 
 #training
 learning_rate = 1e-3
