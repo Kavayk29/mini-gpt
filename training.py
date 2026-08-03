@@ -17,7 +17,7 @@ print("Training on device:", device)
 model = GPT()
 model = model.to(device)
 
-optimizer = Adam(model.parameters, lr=learning_rate)
+optimizer = Adam(model.parameters(), lr=learning_rate)
 
 loss_fn = nn.CrossEntropyLoss()
 
@@ -48,9 +48,12 @@ def eval():
     model.train()
     return losses
 
+
+model.train()
+
 for iteration in range(max_iters):
 
-    if iteration %eval_intervals == 0:
+    if iteration % eval_intervals == 0:
         losses = eval()
         print(f"Iteration {iteration}: Train Loss: {losses['train']:.4f}, Test Loss: {losses['test']:.4f}")
 

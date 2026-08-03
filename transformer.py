@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from config import n_embd, n_head, block_size, device
+from config import n_embd, n_head, block_size
 
 head_size = n_embd//n_head
 

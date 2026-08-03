@@ -6,7 +6,6 @@ from config import (
     n_embd,
     block_size,
     n_layer,
-    device
 )
 
 from transformer import Block
