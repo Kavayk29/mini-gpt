@@ -14,5 +14,7 @@ checkpoints/
 # Dataset
 data/
 
+rough.py
+
 # VS Code
 .vscode/
