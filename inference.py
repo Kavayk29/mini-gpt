@@ -6,12 +6,6 @@ from model import GPT
 from config import device, block_size
 from preprocessing import encode, decode
 
-with open("data/itos.pkl","rb") as f:
-    itos = pickle.load(f)
-
-with open("data/stoi.pkl","rb") as f:
-    stoi = pickle.load(f)
-
 
 model = GPT()
 model.load_state_dict(torch.load("model.pt", map_location=device))
@@ -24,6 +18,7 @@ def generate(idx, max_new_tokens):
 
     for _ in range(max_new_tokens):
         idx_cond = idx[:, -block_size:]
+
 
         logits = model(idx_cond)
 
